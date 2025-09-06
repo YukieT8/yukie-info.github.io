@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="preloader-logo"></div>
+        <div class="preloader-text">yukie</div>
+    </div>
+    <!-- Preloader End -->
+
     <!-- Видео фон -->
     <video id="videoBackground" autoplay muted loop playsinline></video>
     
@@ -157,6 +164,17 @@
     </div>
 
     <script>
+        // Preloader logic
+        window.onload = function() {
+            const preloader = document.getElementById('preloader');
+            // Add a small delay for aesthetic purposes, so it doesn't just flash
+            setTimeout(() => {
+                if (preloader) {
+                    preloader.classList.add('hidden');
+                }
+            }, 500); // 500ms delay
+        };
+
         // Конфигурация Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyDaQR0g1_T_0AEZRYWMCyFKF7jFI5MiLCs",
